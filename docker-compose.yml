@@ -1,0 +1,17 @@
+version: '3'
+services:
+  db:
+    image: mongo:latest
+    ports:
+      - '27018:27017'
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: username
+      MONGO_INITDB_ROOT_PASSWORD: password
+    volumes:
+      - ./data:/home
+  redis:
+    image: redis
+    ports:
+      - '6379:6379'
+    volumes:
+      - ./data:/data
